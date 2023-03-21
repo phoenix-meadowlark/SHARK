@@ -357,3 +357,4 @@ class SharkModuleTest(unittest.TestCase):
 
         with ireec.tools.TempFileSaver(tempdir.name):
             self.module_tester.create_and_check_module(dynamic, device)
+        gc.collect()
