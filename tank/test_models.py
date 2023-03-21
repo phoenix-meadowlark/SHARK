@@ -17,6 +17,7 @@ import tempfile
 import os
 import shutil
 import multiprocessing
+import gc
 
 
 def load_csv_and_convert(filename, gen=False):
@@ -208,6 +209,8 @@ class SharkModuleTester:
 
         if self.save_repro == True:
             self.save_reproducers()
+
+        gc.collect()
 
     def benchmark_module(self, shark_module, inputs, dynamic, device):
         shark_args.enable_tf32 = self.tf32
