@@ -362,7 +362,11 @@ for currently supported models. Exiting benchmark ONNX."
             "measured_device_memory_mb",
         ]
         # "frontend" must be the first element.
-        engines = ["frontend", "shark_python", "shark_iree_c"]
+        engines = [
+            "frontend",
+            # "shark_python",
+            "shark_iree_c",
+        ]
         if shark_args.onnx_bench == True:
             engines.append("onnxruntime")
 
